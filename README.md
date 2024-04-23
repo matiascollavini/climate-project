@@ -1,3 +1,3 @@
 # climate-project
 
-### Made with nextjs
+Made with nextjs, typescript & tailwimd.
