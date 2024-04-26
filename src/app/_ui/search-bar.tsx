@@ -10,7 +10,6 @@ export default function SearchBar() {
 
   const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(searchParams)
-    params.set('page', '1')
       if (term) {
       params.set('query', term)
     }else{
@@ -20,16 +19,13 @@ export default function SearchBar() {
     }, 300)
   
   return (
-      <div className='relative'>
+      <div className='relative w-1/3'>
         <input type="search" placeholder='Buscar clima por localidad' className='w-full p-4 rounded-full bg-slate-800 text-white' 
           defaultValue={searchParams.get('query')?.toString()}
           onChange={(e) => {
             handleSearch(e.target.value)
           }} 
         />
-        <button className='absolute right-1 top-1/2 -translate-y-1/2 p-4 bg-slate-900 rounded-full text-white'>
-          <FaSearchLocation />
-        </button>
       </div>
   );
 }
