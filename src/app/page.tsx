@@ -1,24 +1,31 @@
 import { fetchWeatherData } from "./_actions";
+import ClimateCard from "./_components/cards";
 import SunnyWithClouds from "./_ui/sunny-with-clouds";
 
 export default async function Home() {
-      const climateApi = await fetchWeatherData()
+  const localWeatherType = 'current'
+  const location = '-34.72,-58.40'
+
+  const locations = [
+    { id: 1, location: 'Banfield' },
+    { id: 2, location: 'Lomas de Zamora' },
+    { id: 3, location: 'Remedios de Escalada' },
+    { id: 4, location: 'Lanús' },
+    { id: 5, location: 'Avellaneda' },
+  ]
+  
+  const climateApi = await fetchWeatherData(localWeatherType, location)
   return (
-  <main className="flex flex-col justify-center items-center h-screen gap-10">
-    <div className="flex flex-row justify-center items-center border rounded-lg bg-gray-200 shadow p-5">
-      <div className="flex justify-start items-center">
-        <SunnyWithClouds />
-      </div>
-      <div className="flex justify-end items-center">
-        <div className="flex flex-col justify-center items-start gap-2">
-            <h1 className="text-2xl">°C</h1>
-          <div>
-            <p>Temperatura: {climateApi.temp_c}°</p>
-            <p>Sensacion termica: {climateApi.feelslike_c}°</p>
+    <>
+      <header></header>
+      <main className="grid grid-cols-2 grid-flow-columns justify-center items-center h-screen gap-10 px-20">
+        {locations.map((location: any) => 
+          <div key={location.id}>
+            <ClimateCard location={location.location} climateApi={climateApi} />
           </div>
-        </div>
-      </div>
-    </div>
-  </main>
+        )}
+      </main>
+      <footer></footer>
+    </>
   )
 }

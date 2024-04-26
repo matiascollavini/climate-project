@@ -1,8 +1,8 @@
 'use server'
 
-export async function fetchWeatherData() {
-  const LocalWeatherType = 'current'
-  const Location = '-34.72,-58.40'
+export async function fetchWeatherData (localWeather: string, locationString: string) {
+  const LocalWeatherType = localWeather // Current o Forecast
+  const Location = locationString // Cordenadas de ubicacion
   const APP_ID = 'aa9dcee8'
   const APP_KEY = 'f2b7727d37ca4ee6963e5db484247d2c'
 
