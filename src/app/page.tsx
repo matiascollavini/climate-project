@@ -3,27 +3,25 @@ import ClimateCard from "./_components/cards";
 import SunnyWithClouds from "./_ui/sunny-with-clouds";
 
 export default async function Home() {
-  const localWeatherType = 'current'
-  const location = '-34.72,-58.40'
 
   const locations = [
-    { id: 1, location: 'Banfield' },
-    { id: 2, location: 'Lomas de Zamora' },
-    { id: 3, location: 'Remedios de Escalada' },
-    { id: 4, location: 'Lanús' },
-    { id: 5, location: 'Avellaneda' },
+    { id: 1, location: 'Banfield', cords: '-34.74,-58.40' },
+    { id: 2, location: 'Lomas de Zamora', cords: '-34.76,-58.42' },
+    { id: 3, location: 'Remedios de Escalada', cords: '-34.72,-58.40' },
+    { id: 4, location: 'Lanús', cords: '-34.69,-58.41' },
+    { id: 5, location: 'Avellaneda', cords: '-34.66,-58.36' }
   ]
-  
-  const climateApi = await fetchWeatherData(localWeatherType, location)
-  return (
+    return (
     <>
       <header></header>
-      <main className="grid grid-cols-2 grid-flow-columns justify-center items-center h-screen gap-10 px-20">
-        {locations.map((location: any) => 
-          <div key={location.id}>
-            <ClimateCard location={location.location} climateApi={climateApi} />
-          </div>
-        )}
+      <main className="container min-h-[calc(100vh-121px)] mx-auto pb-10 px-6 flex justify-center items-center h-screen gap-10">
+        <div className="grid grid-flow-col grid-rows-2 justify-center items-center gap-4">
+          {locations.map((location: any) => 
+            <div key={location.id} className="min-h-[200px] min-w-[500px]">
+              <ClimateCard locationID={location.cords} locationName={location.location} />
+            </div>
+          )}
+        </div>
       </main>
       <footer></footer>
     </>

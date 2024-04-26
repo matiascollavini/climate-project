@@ -1,13 +1,15 @@
+import { fetchWeatherData } from "../_actions";
 import SunnyWithClouds from "../_ui/sunny-with-clouds";
 
-export default function ClimateCard ({ climateApi, location }: { climateApi: any, location: string }) {
+export default async function ClimateCard ({ locationID, locationName }: { locationID: string, locationName: string }) {
+  const climateApi = await fetchWeatherData('current', locationID)
   return (
     <div className="flex flex-row justify-center items-center border rounded-lg bg-gray-200 shadow p-5">
       <div className="flex justify-start items-center">
         <SunnyWithClouds />
       </div>
-      <div className="flex flex-col justify-end items-center w-full">
-        <h1 className="text-2xl">{location}</h1>
+      <div className="flex flex-col justify-end items-start w-full">
+        <h1 className="text-2xl">{locationName}</h1>
         <div className="flex flex-col justify-center items-start gap-2">
             <h1 className="text-2xl">{climateApi.temp_c}°C</h1>
           <div>
