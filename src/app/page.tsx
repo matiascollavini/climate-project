@@ -27,7 +27,7 @@ const filteredLocations: Location[] = locations.filter((location: Location) =>
   return (
     <>
       <header></header>
-      <main className="min-h-[calc(100vh-121px)] mx-auto pb-10 px-6 flex justify-center items-center h-screen gap-10">
+      <main className="min-h-[calc(100vh-121px)] mx-auto py-10 px-6 flex justify-center items-center gap-10 grow">
         <div className="flex flex-col justify-center items-center gap-20">
           <div className="w-full flex justify-center items-center">
             <SearchBar />
