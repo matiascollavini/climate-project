@@ -19,7 +19,7 @@ export default function SearchBar() {
     }, 300)
   
   return (
-      <div className='relative w-1/3'>
+      <div className='relative w-full md:w-1/3'>
         <input type="search" placeholder='Buscar clima por localidad' className='w-full p-4 rounded-full bg-slate-800 text-white' 
           defaultValue={searchParams.get('query')?.toString()}
           onChange={(e) => {
