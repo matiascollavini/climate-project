@@ -1,5 +1,5 @@
 import { fetchWeatherData } from "../_actions";
-import SunnyWithClouds from "../_ui/climate-icon";
+import SunnyWithClouds from "./climate-icon";
 
 export default async function ClimateCard ({ locationID, locationName }: { locationID: string, locationName: string }) {
   const climateApi = await fetchWeatherData('current', locationID)

@@ -1,7 +1,7 @@
 import { fetchWeatherData } from "./_actions";
 import { locations } from "./_consts/locations";
 import ClimateCard from "./_components/cards";
-import SunnyWithClouds from "./_ui/climate-icon";
+import SunnyWithClouds from "./_components/climate-icon";
 import SearchBar from "./_ui/search-bar";
 import { normalizeString } from "./_utils";
 
