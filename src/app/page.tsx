@@ -41,7 +41,12 @@ const filteredLocations: Location[] = locations.filter((location: Location) =>
               </div>
             )}
           </>
-          : <div className="min-h-[200px] min-w-[500px] flex justify-center items-center text-white font-semibold">No hay resultados disponibles</div>}
+          : 
+          <>
+            <div></div>
+            <div className="min-h-[200px] min-w-[500px] flex justify-center items-center text-white font-semibold">No hay resultados disponibles</div>
+          </>
+          }
           </div>
         </div>
       </main>
