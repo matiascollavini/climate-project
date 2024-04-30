@@ -31,14 +31,16 @@ export default function ClimateCard ({ climateApi, locationName }: { climateApi:
         setShowDialog={setShowDialog}
         title={locationName}
       >
-        <div className="flex flex-col md:flex-row justify-center items-center w-full">
+        <div className="flex flex-col justify-center items-center w-full">
           <div className="flex justify-center items-center">
             <SunnyWithClouds climate={climateApi.wx_desc} />
           </div>
-        <div className="flex flex-col justify-end items-center md:items-start w-full text-white">
-          <h1 className="text-2xl font-medium">{translateCliamte(climateApi.wx_desc)}</h1>
-          <div className="flex flex-col justify-center items-center md:items-start mt-2 md:mt-0">
-          <h1 className="text-2xl font-bold mb-4">{climateApi.temp_c}°C</h1>
+        <div className="flex flex-col justify-end items-center w-full text-white">
+          <div className="flex justify-center items-end gap-4 mb-8 relative w-full">
+            <h1 className="text-5xl font-bold">{climateApi.temp_c}°C</h1>
+            <p className="text-xs md:text-base font-medium absolute truncate left-[245px] md:left-[360px]">{translateCliamte(climateApi.wx_desc)}</p>
+          </div>
+          <div className="flex flex-col justify-center items-center mt-2">
               <div className="grid grid-flow-col grid-cols-2 justify-center items-start gap-4">
                 <div className="flex flex-col justify-center items-start gap-4">
                   <p>Sensacion termica: {climateApi.feelslike_c}°C</p>
