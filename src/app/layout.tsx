@@ -16,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} min-h-screen`}>{children}</body>
+      <body className={`${inter.className} min-h-screen`}>
+        <header></header>
+
+        <main className="min-h-[calc(100vh-121px)] mx-auto py-10 px-6 grow">
+          {children}
+        </main>
+
+        <footer></footer>
+      </body>
     </html>
   );
 }

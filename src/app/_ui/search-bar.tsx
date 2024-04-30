@@ -1,5 +1,5 @@
 'use client'
-import { FaSearchLocation } from 'react-icons/fa';
+
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 

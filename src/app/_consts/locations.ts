@@ -8,5 +8,7 @@ export const locations = [
     { id: 7, location: 'Quilmes', cords: '-34.72,-58.25' },
     { id: 8, location: 'Adrogue', cords: '-34.80,-58.38' },
     { id: 9, location: 'Berazategui', cords: '-34.76,-58.20' },
-    { id: 10, location: 'Wilde', cords: '-34.70,-58.32' }
+    { id: 10, location: 'Wilde', cords: '-34.70,-58.32' },
+    { id: 11, location: 'Alejandro Korn', cords: '-34.98,-58.37' },
+    { id: 11, location: 'San Vicente', cords: '-35.02,-58.42' }
   ]
