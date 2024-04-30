@@ -31,13 +31,13 @@ export default function ClimateCard ({ climateApi, locationName }: { climateApi:
         setShowDialog={setShowDialog}
         title={locationName}
       >
-        <div className="flex justify-center items-center w-full">
+        <div className="flex flex-col md:flex-row justify-center items-center w-full">
           <div className="flex justify-center items-center">
             <SunnyWithClouds climate={climateApi.wx_desc} />
           </div>
-        <div className="flex flex-col justify-end items-start w-full text-white">
+        <div className="flex flex-col justify-end items-center md:items-start w-full text-white">
           <h1 className="text-2xl font-medium">{translateCliamte(climateApi.wx_desc)}</h1>
-          <div className="flex flex-col justify-center items-start">
+          <div className="flex flex-col justify-center items-center md:items-start mt-2 md:mt-0">
           <h1 className="text-2xl font-bold mb-4">{climateApi.temp_c}°C</h1>
               <div className="grid grid-flow-col grid-cols-2 justify-center items-start gap-4">
                 <div className="flex flex-col justify-center items-start gap-4">
