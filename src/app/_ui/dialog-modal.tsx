@@ -9,7 +9,7 @@ export default function DialogModal ({ showDialog, setShowDialog, size, title, c
       static={true}
       className="z-[100]"
     >
-      <DialogPanel className={`flex flex-col justify-start py-4 px-4 ${size ? size : 'max-w-[600px]'}`}>
+      <DialogPanel className={`flex flex-col justify-start py-4 px-4 bg-[#111827] ${size ? size : 'max-w-[600px]'}`}>
         <div className='py-5 flex items-center justify-between'>
           <div>
             <GlobeAmericasIcon className="w-8 h-8 text-white" />
