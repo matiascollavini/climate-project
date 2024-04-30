@@ -17,7 +17,7 @@ interface SearchParams {
 }
 
 export default async function Home({ searchParams }: { searchParams?: SearchParams }) {
-  const query = searchParams?.query || '';
+  const query = searchParams?.query || ''
 
 // Filtrar las ubicaciones basadas en la consulta de búsqueda normalizada
 const filteredLocations: Location[] = locations.filter((location: Location) =>

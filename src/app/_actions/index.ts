@@ -7,7 +7,7 @@ export async function fetchWeatherData (localWeather: string, locationString: st
   const APP_KEY = 'f2b7727d37ca4ee6963e5db484247d2c'
 
     try {
-        const response = await fetch(`http://api.weatherunlocked.com/api/${LocalWeatherType}/${Location}?app_id=${APP_ID}&app_key=${APP_KEY}`);
+        const response = await fetch(`http://api.weatherunlocked.com/api/${LocalWeatherType}/${Location}?app_id=${APP_ID}&app_key=${APP_KEY}`, { next: { revalidate: 3600 } });
         const data = await response.json();
 
         return data
