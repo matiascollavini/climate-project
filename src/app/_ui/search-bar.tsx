@@ -27,7 +27,7 @@ export default function SearchBar() {
   onKeyDown()
   return (
       <div className='relative w-full md:w-1/3'>
-        <input type="search" placeholder='Buscar clima por localidad' className='w-full p-4 rounded-full bg-slate-800 text-white' 
+        <input type="search" placeholder='Buscar clima por localidad' className='w-full p-4 rounded-full bg-slate-200 dark:bg-[#22272e] dark:text-white' 
           defaultValue={searchParams.get('query')?.toString()}
           onChange={(e) => {
             handleSearch(e.target.value)

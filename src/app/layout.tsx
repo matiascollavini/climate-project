@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.className} min-h-screen`}>
+      <body className={`${inter.className} bg-gradient-to-b from-slate-200 to-slate-300 dark:from-[#22272e] dark:to-[#0f0e0e] min-h-screen`}>
         <header></header>
 
         <main className="min-h-[calc(100vh-121px)] mx-auto py-10 px-6 grow">

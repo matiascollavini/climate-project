@@ -3,6 +3,7 @@ import { locations } from "@/app/_consts/locations";
 import SearchBar from "@/app/_ui/search-bar";
 import { normalizeString } from "@/app/_utils";
 import ClimateCard from "@/app/_components/cards";
+import DarkMode from "./_ui/darkmode";
 
 interface Location {
   id: number;
@@ -23,6 +24,9 @@ export default async function Page ({ searchParams }: { searchParams?: SearchPar
   
   return (
     <div className="w-full flex flex-col justify-center items-center gap-20">
+        <div className="absolute top-5 left-5">
+          <DarkMode className="h-6 w-6 text-black dark:text-white" />
+        </div>
           <div className="w-full flex justify-center items-center">
             <SearchBar />
           </div>
@@ -42,7 +46,7 @@ export default async function Page ({ searchParams }: { searchParams?: SearchPar
           : 
           <>
             <div></div>
-            <div className="min-h-[200px] min-w-[500px] flex justify-center items-center text-white font-semibold">No hay resultados disponibles</div>
+            <div className="min-h-[200px] min-w-[500px] flex justify-center items-center dark:text-white font-semibold">No hay resultados disponibles</div>
           </>
           }
           </div>
