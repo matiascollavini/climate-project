@@ -20,6 +20,7 @@ export default async function Page ({ searchParams }: { searchParams?: SearchPar
   const filteredLocations: Location[] = locations.filter((location: Location) =>
     normalizeString(location.location.toLowerCase()).includes(normalizeString(query.toLowerCase()))
   );
+  
   return (
     <div className="w-full flex flex-col justify-center items-center gap-20">
           <div className="w-full flex justify-center items-center">

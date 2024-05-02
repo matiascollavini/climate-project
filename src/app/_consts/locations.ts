@@ -10,5 +10,5 @@ export const locations = [
     { id: 9, location: 'Berazategui', cords: '-34.76,-58.20' },
     { id: 10, location: 'Wilde', cords: '-34.70,-58.32' },
     { id: 11, location: 'Alejandro Korn', cords: '-34.98,-58.37' },
-    { id: 11, location: 'San Vicente', cords: '-35.02,-58.42' }
+    { id: 12, location: 'San Vicente', cords: '-35.02,-58.42' }
   ]

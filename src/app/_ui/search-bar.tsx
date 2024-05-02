@@ -1,6 +1,7 @@
 'use client'
 
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 
 export default function SearchBar() {
@@ -17,7 +18,13 @@ export default function SearchBar() {
     }
     replace(`${pathname}?${params.toString()}`)
     }, 300)
-  
+
+    const onKeyDown = () => { document.addEventListener('keydown', () => {
+      document.querySelector('input')?.focus()
+    })
+  }
+
+  onKeyDown()
   return (
       <div className='relative w-full md:w-1/3'>
         <input type="search" placeholder='Buscar clima por localidad' className='w-full p-4 rounded-full bg-slate-800 text-white' 
