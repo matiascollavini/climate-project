@@ -19,7 +19,8 @@ export default function SearchBar() {
     replace(`${pathname}?${params.toString()}`)
     }, 300)
 
-    const onKeyDown = () => { document.addEventListener('keydown', () => {
+    const onKeyDown = () => {
+      document.addEventListener('keydown', () => {
       document.querySelector('input')?.focus()
     })
   }

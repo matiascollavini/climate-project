@@ -3,11 +3,21 @@
 import SunnyWithClouds from "./climate-icon";
 import DialogModal from "../_ui/dialog-modal";
 import { useState } from "react";
-import { getWindDirection, translateCliamte } from "../_utils";
+import { getWindDirection, normalizeString, translateCliamte } from "../_utils";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 export default function ClimateCard ({ climateApi, locationName }: { climateApi: any, locationName: string }) {
   const [showDialog, setShowDialog] = useState(false)
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
+  const { replace } = useRouter()
+  const params = new URLSearchParams(searchParams)
 
+  const handleShowMore = (locationName: string) => {
+    params.set('query', normalizeString(locationName))
+    replace(`${pathname}?${params.toString()}`)
+    setShowDialog(false)
+  }
   return (
     <>
       <div
@@ -55,6 +65,9 @@ export default function ClimateCard ({ climateApi, locationName }: { climateApi:
               </div>
             </div>
           </div>
+          <button type="button" onClick={() => handleShowMore(locationName)} className="text-white text-lg flex justify-end items-end w-full mt-10">
+            Ver más
+          </button>
         </div>
       </DialogModal>
     </>
