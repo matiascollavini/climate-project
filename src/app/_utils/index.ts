@@ -44,27 +44,39 @@ export function getWindDirection (iniciales: string) {
 
 export function translateCliamte (inglishClimate: string) {
   switch (inglishClimate) {
-      case 'Cloudy':
-          return 'Nublado';
+    case 'Cloudy':
+        return 'Nublado';
 
-      case 'Mostly cloudy':
-          return 'Mayormente Nublado'
+    case 'Mostly cloudy':
+        return 'Mayormente Nublado'
 
-      case 'Light Rain':
-          return 'Llovizna'
+    case 'Light Rain':
+        return 'Llovizna'
 
-      case 'Partly cloudy':
-          return 'Parcialmente Nublado'
+    case 'Partly cloudy':
+        return 'Parcialmente Nublado'
 
-      case 'Rain':
-          return 'Lluvia'
+    case 'Rain':
+        return 'Lluvia'
 
-      case 'Rain with Thunderstorm':
-          return 'Lluvia con Tormenta'
+    case 'Rain with Thunderstorm':
+        return 'Lluvia con Tormenta'
 
-      case 'Light Rain with Thunderstorm':
-          return 'Llovizna con Tormenta'
+    case 'Light Rain with Thunderstorm':
+        return 'Llovizna con Tormenta'
 
+    case 'Light rain shower':
+      return 'Lluvia ligera'
+
+    case 'Clear skies':
+      return 'Cielo despejado'
+
+    case 'Light drizzle':
+      return 'Llovizna ligera'
+
+    case 'Mist':
+      return 'Niebla'
+      
       default:
           return inglishClimate;
   }

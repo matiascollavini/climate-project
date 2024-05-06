@@ -55,9 +55,10 @@ export default async function Page ({ searchParams }: { searchParams?: SearchPar
           <>
             {filteredLocations.map(async (location: Location) => {
               const climateApi = await fetchWeatherData('current', location.cords)
+              const forecastApi = await fetchWeatherData('forecast', location.cords)
               return (
               <div key={location.id} className="w-full">
-                <OneClimate climateApi={climateApi} locationName={location.location} />
+                <OneClimate forecastApi={forecastApi} climateApi={climateApi} locationName={location.location} />
               </div>
               )
             }

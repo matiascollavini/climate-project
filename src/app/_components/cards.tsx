@@ -1,6 +1,6 @@
 'use client'
 
-import SunnyWithClouds from "./climate-icon";
+import ClimateIcon from "./climate-icon";
 import DialogModal from "../_ui/dialog-modal";
 import { useState } from "react";
 import { getWindDirection, normalizeString, translateCliamte } from "../_utils";
@@ -24,7 +24,7 @@ export default function ClimateCard ({ climateApi, locationName }: { climateApi:
         onClick={() => setShowDialog(true)} 
         className="transition flex flex-row justify-center items-center rounded-lg bg-gradient-to-b from-slate-300 to-slate-400 dark:from-[#353d49] dark:to-[#2f2c2c] shadow p-5 cursor-pointer hover:scale-105">
         <div className="flex justify-start items-center">
-          <SunnyWithClouds climate={climateApi.wx_desc} />
+          <ClimateIcon climate={climateApi.wx_desc} />
         </div>
         <div className="flex flex-col justify-end items-start w-full dark:text-white">
           <h1 className="text-2xl font-medium">{locationName}</h1>
@@ -43,7 +43,7 @@ export default function ClimateCard ({ climateApi, locationName }: { climateApi:
       >
         <div className="flex flex-col justify-center items-center w-full">
           <div className="flex justify-center items-center">
-            <SunnyWithClouds climate={climateApi.wx_desc} />
+            <ClimateIcon className="h-56 w-56" climate={climateApi.wx_desc} />
           </div>
         <div className="flex flex-col justify-end items-center w-full text-black dark:text-white">
           <div className="flex justify-center items-end gap-4 mb-8 relative w-full">
@@ -65,7 +65,7 @@ export default function ClimateCard ({ climateApi, locationName }: { climateApi:
               </div>
             </div>
           </div>
-          <button type="button" onClick={() => handleShowMore(locationName)} className="text-white text-lg flex justify-end items-end w-full mt-10">
+          <button type="button" onClick={() => handleShowMore(locationName)} className="text-black dark:text-white text-lg flex justify-end items-end w-full mt-10">
             Ver más
           </button>
         </div>

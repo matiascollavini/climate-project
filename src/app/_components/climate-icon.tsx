@@ -1,19 +1,32 @@
-import { Cloudy, LightRain, MostlyCloudy, PartlyCloudy } from "../_icons";
+import { Cloudy, LightRain, MistIcon, MostlyCloudy, PartlyCloudy, SunIcon } from "../_icons";
 
-export default function SunnyWithClouds ({ climate }: any) {
+export default function ClimateIcon ({ climate, className, divClassName }: { climate: any, className?: string, divClassName?: any }) {
+  const iconClassname = className ? className : 'h-36 w-36'
   return(
-    <div className="min-h-[200px] min-w-[200px] flex justify-center items-center">
+    <div className={`${divClassName ? divClassName : 'min-h-[200px] min-w-[200px]' } flex justify-center items-center`}>
       {climate === 'Light Rain' &&
-      <LightRain className="h-36 w-36" />
+        <LightRain className={iconClassname} />
+      }
+      {climate === 'Light rain shower' &&
+        <LightRain className={iconClassname} />
+      }
+      {climate === 'Light drizzle'  &&
+        <LightRain className={iconClassname} />
       }
       {climate === 'Partly cloudy' &&
-        <PartlyCloudy className="h-36 w-36" />
+        <PartlyCloudy className={iconClassname} />
       }
       {climate === 'Cloudy' &&
-        <Cloudy className="h-36 w-36" />
+        <Cloudy className={iconClassname} />
       }
       {climate === 'Mostly cloudy' &&
-      <MostlyCloudy className="h-36 w-36" />
+        <MostlyCloudy className={iconClassname} />
+      }
+      {climate === 'Mist' &&
+        <MistIcon className={iconClassname} />
+      }
+      {climate === 'Clear skies' &&
+        <SunIcon className={iconClassname} />
       }
     </div>
   )
