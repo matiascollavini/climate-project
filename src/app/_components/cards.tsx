@@ -22,7 +22,7 @@ export default function ClimateCard ({ climateApi, locationName }: { climateApi:
     <>
       <div
         onClick={() => setShowDialog(true)} 
-        className="transition flex flex-row justify-center items-center rounded-lg bg-gradient-to-b from-slate-300 to-slate-400 dark:from-[#353d49] dark:to-[#2f2c2c] shadow p-5 cursor-pointer hover:scale-105">
+        className="transition flex flex-row justify-center items-center rounded-lg bg-gradient-to-b from-slate-400 to-slate-500 dark:from-[#353d49] dark:to-[#2f2c2c] shadow p-5 cursor-pointer hover:scale-105">
         <div className="flex justify-start items-center">
           <ClimateIcon climate={climateApi.wx_desc} />
         </div>

@@ -3,7 +3,6 @@ import { locations } from "@/app/_consts/locations";
 import SearchBar from "@/app/_ui/search-bar";
 import { normalizeString } from "@/app/_utils";
 import ClimateCard from "@/app/_components/cards";
-import DarkMode from "./_ui/darkmode";
 import OneClimate from "./_components/one-climate";
 
 interface Location {
@@ -25,9 +24,6 @@ export default async function Page ({ searchParams }: { searchParams?: SearchPar
   
   return (
     <div className="w-full flex flex-col justify-center items-center gap-20">
-        <div className="absolute top-5 left-5">
-          <DarkMode className="h-6 w-6 text-black dark:text-white" />
-        </div>
           <div className="w-full flex justify-center items-center">
             <SearchBar />
           </div>
