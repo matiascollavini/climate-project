@@ -32,9 +32,10 @@ export default async function Page ({ searchParams }: { searchParams?: SearchPar
           <>
             {filteredLocations.map(async (location: Location) => {
               const climateApi = await fetchWeatherData('current', location.cords)
+              const forecastApi = await fetchWeatherData('forecast', location.cords)
               return (
               <div key={location.id} className="md:min-h-[200px] md:min-w-[500px]">
-                <ClimateCard climateApi={climateApi} locationName={location.location} />
+                <ClimateCard climateApi={climateApi} locationName={location.location} forecastApi={forecastApi}/>
               </div>
               )
             }

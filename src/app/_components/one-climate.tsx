@@ -23,14 +23,19 @@ export default function OneClimate ({ climateApi, locationName, forecastApi }: {
       </div>
         <div className="flex justify-center items-center gap-16">
           {fiveDaysArray.map((day: any) => {
-            return (
-              <div className="flex flex-col justify-center items-center gap-3">
-                <p className="dark:text-white text-2xl">{parseNumberToDate(new Date (parseStringDate(day.date)).getDay())}</p>
-                <ClimateIcon divClassName='min-h-[100px]' className="h-24 w-24" climate={day.Timeframes[0].wx_desc} />
-                <p className="dark:text-white flex justify-center items-center gap-3"><span><span className="text-xl">{day.temp_max_c}°</span>.</span> <span className="text-gray-500"><span className="text-xl">{day.temp_min_c}°</span>.</span></p>
-                <p className="dark:text-white">{translateCliamte(day.Timeframes[0].wx_desc)}</p>
-              </div>
-          )})}
+            if (day) {
+              return (
+                <div className="flex flex-col justify-center items-center gap-3" key={day.date}>
+                  <p className="dark:text-white text-2xl">{parseNumberToDate(new Date(parseStringDate(day.date)).getDay())}</p>
+                  <ClimateIcon divClassName='min-h-[100px]' className="h-24 w-24" climate={day.Timeframes[0].wx_desc} />
+                  <p className="dark:text-white flex justify-center items-center gap-3"><span><span className="text-xl">{day.temp_max_c}°</span>.</span> <span className="text-gray-500"><span className="text-xl">{day.temp_min_c}°</span>.</span></p>
+                  <p className="dark:text-white">{translateCliamte(day.Timeframes[0].wx_desc)}</p>
+                </div>
+                );
+            }else{
+          // Manejar el caso de error
+          return null;
+          }})}
         </div>
     </div>
   )

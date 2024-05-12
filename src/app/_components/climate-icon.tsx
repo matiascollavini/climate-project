@@ -3,7 +3,7 @@ import { Cloudy, LightRain, MistIcon, MostlyCloudy, PartlyCloudy, SunIcon } from
 export default function ClimateIcon ({ climate, className, divClassName }: { climate: any, className?: string, divClassName?: any }) {
   const iconClassname = className ? className : 'h-36 w-36'
   return(
-    <div className={`${divClassName ? divClassName : 'min-h-[200px] min-w-[200px]' } flex justify-center items-center`}>
+    <div className={`${divClassName ? divClassName : 'min-h-[150px] min-w-[200px]' } flex justify-center items-center`}>
       {climate === 'Light Rain' &&
         <LightRain className={iconClassname} />
       }
